@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Helvetice, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     display: flex;
@@ -64,7 +64,7 @@ th, td{
 th {
     background-color: #f2f2f2;
 }
-input[type="text"], input[type="email"],input[type="password"],
+input[type="text"], input[type="email"], input[type="password"],
 input[type="date"], input[type="checkbox"]
 {
     width: 100%;
