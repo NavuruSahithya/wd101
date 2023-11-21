@@ -37,12 +37,12 @@ if (!validateUserData(userData)){
 }
 
 });
-function validateUserData() {
+function validateUserData(userData) {
     const minAge = 18;
     const maxAge = 55;
     const today = new Date();
     const birthDate =new Date(userDate.dob);
-    const age = today.getFullYear()-birthDate.getFullYear() -birthDate.getFullYear();
+    const age = today.getFullYear()- birthDate.getFullYear();
     if (age < minAge || age> maxAge) {
         return false;
     }
@@ -70,7 +70,7 @@ function updateUserDataTable()
          }
     }
 function createUserDataTableRow(userData) {
-    const row=document.createElement('tr');
+    const row= document.createElement('tr');
     row.innerHTML= `
     <td>${userData.name}</td>
     <td>${userData.email}</td>
@@ -83,4 +83,3 @@ function createUserDataTableRow(userData) {
 function clearForm() {
     registrationForm.reset();
 }
-
