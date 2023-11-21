@@ -4,11 +4,11 @@ const userDataTableBody=userDataTable.querySelector('tbody');
 const dobInput=document.getElementById('dob');
 const dobError=document.getElementById('dobError');
 
-window.addEventListener('load',() => {
+window.addEventListener('load', () => {
     updateUserDataTable();
 });
 
-registrationForm.addEventListener('submit',(event) => {
+registrationForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
 const userData= {
@@ -21,7 +21,7 @@ const userData= {
 
 if (!validateUserData(userData)){
     const errorMessage=document.createElement('p');
-    errorMessage.textContent='value must be 09/11/1967 or later';
+    errorMessage.textContent='Value must be 09/11/1967 or later';
     errorMessage.classList.add('error-message');
 
     const dateField=document.getElementById('dob');
@@ -41,15 +41,15 @@ function validateUserData(userData) {
     const minAge = 18;
     const maxAge = 55;
     const today = new Date();
-    const birthDate =new Date(userDate.dob);
-    const age = today.getFullYear()- birthDate.getFullYear();
-    if (age < minAge || age> maxAge) {
+    const birthDate =new Date(userData.dob);
+    const age = today.getFullYear() - birthDate.getFullYear();
+    if (age < minAge || age > maxAge) {
         return false;
     }
     return true;
     }
 
-function saveuserData(userData)
+function saveUserData(userData)
 {
     const existingUserData=JSON.parse(localStorage.getItem('userList')) || [];
     existingUserData.push(userData);
@@ -58,7 +58,7 @@ function saveuserData(userData)
 function updateUserDataTable()
 {
     userDataTableBody.innerHTML='';
-    const userList=JSON.parse(localStorage.getItem('userList')) || [];
+    const userList = JSON.parse(localStorage.getItem('userList')) || [];
     userList.forEach((userData) => {
         const  userDataRow=createUserDataTableRow(userData);
         userDataTableBody.appendChild(userDataRow);
